@@ -58,7 +58,7 @@
 &trans  &kp Q       &kp W       &kp F           &kp P           &kp B                 &kp J           &kp L          &kp U        &kp Y         &kp SQT     &trans
 &trans  &hm LGUI A  &hm LALT R  &hm LCTRL S     &hm LSHFT T     &kp G                 &kp M           &hm LSHFT N    &hm LCTRL E  &hm LALT I    &hm LGUI O  &trans
 &trans  &kp Z       &kp RALT X  &kp C           &kp D           &kp V                 &kp K           &kp H          &kp CMMA     &hm RALT DOT  &kp FSLH    &trans
-                                &lht MEDIA ESC  &lht NAV SPACE  &lht MOUSE TAB        &lht SYM ENTER  &lht NUM BSPC  &lht FN DEL
+                                &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
             >;
         };
 

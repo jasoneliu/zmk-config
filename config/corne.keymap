@@ -21,12 +21,12 @@
 // Behavior configuration
 &mt {
     tapping-term-ms = <150>;
-    quick-tap-ms = <0>;
+    quick_tap_ms = <0>;
     flavor = "tap-preferred";
 };
 &lt {
     tapping_term_ms = <150>;
-    quick-tap-ms = <0>;
+    quick_tap_ms = <0>;
     flavor = "tap-preferred";
 };
 

@@ -59,16 +59,16 @@
 
         default_layer {
 // ---------------------------------------------------------------------------------------------------------
-// |     |   Q    |   W    |     F     |     P     |     B     | # |     J     |     L     |    U    |    Y   |   '    |     |
-// |     | A/LGUI | R/LALT |  S/LCTRL  |  T/LSHFT  |     G     | # |     M     |  N/LSHFT  | E/LCTRL | I/LALT | O/LGUI |     |
-// |     |   Z    | X/RALT |     C     |     D     |     V     | # |     K     |     H     |    ,    | ./RALT |   /    |     |
-//                         | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM | DEL/FN  |
+// | BT_CLR |   Q    |   W    |     F     |     P     |     B     | # |     J     |     L     |    U    |    Y   |   '    |     |
+// |        | A/LGUI | R/LALT |  S/LCTRL  |  T/LSHFT  |     G     | # |     M     |  N/LSHFT  | E/LCTRL | I/LALT | O/LGUI |     |
+// |        |   Z    | X/RALT |     C     |     D     |     V     | # |     K     |     H     |    ,    | ./RALT |   /    |     |
+//                            | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM | DEL/FN  |
 
             bindings = <
-&trans  &kp Q       &kp W       &kp F          &kp P          &kp B                &kp J          &kp L         &kp U        &kp Y         &kp SQT     &trans
-&trans  &mt LGUI A  &mt LALT R  &mt LCTRL S    &mt LSHFT T    &kp G                &kp M          &mt LSHFT N   &mt LCTRL E  &mt LALT I    &mt LGUI O  &trans
-&trans  &kp Z       &mt RALT X  &kp C          &kp D          &kp V                &kp K          &kp H         &kp CMMA     &mt RALT DOT  &kp FSLH    &trans
-                                &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
+&bt BT_CLR  &kp Q       &kp W       &kp F          &kp P          &kp B                &kp J          &kp L         &kp U        &kp Y         &kp SQT     &trans
+&trans      &mt LGUI A  &mt LALT R  &mt LCTRL S    &mt LSHFT T    &kp G                &kp M          &mt LSHFT N   &mt LCTRL E  &mt LALT I    &mt LGUI O  &trans
+&trans      &kp Z       &mt RALT X  &kp C          &kp D          &kp V                &kp K          &kp H         &kp CMMA     &mt RALT DOT  &kp FSLH    &trans
+                                    &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
             >;
         };
 

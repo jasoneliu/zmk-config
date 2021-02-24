@@ -19,16 +19,16 @@
 // (waiting on ZMK extended keycode support)
 
 // Behavior configuration
-&mt {
-    tapping_term_ms = <150>;
-    quick_tap_ms = <0>;
-    flavor = "tap-preferred";
-};
-&lt {
-    tapping_term_ms = <150>;
-    quick_tap_ms = <0>;
-    flavor = "tap-preferred";
-};
+// &mt {
+//     tapping_term_ms = <150>;
+//     quick_tap_ms = <0>;
+//     flavor = "tap-preferred";
+// };
+// &lt {
+//     tapping_term_ms = <150>;
+//     quick_tap_ms = <0>;
+//     flavor = "tap-preferred";
+// };
 
 / {
 

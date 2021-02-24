@@ -18,7 +18,7 @@
 // with everything shifted except the left thumb keys being ( )
 // (waiting on ZMK extended keycode support)
 
-Behavior configuration
+// Behavior configuration
 &mt {
     tapping_term_ms = <150>;
     quick_tap_ms = <0>;

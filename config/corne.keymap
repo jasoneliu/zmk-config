@@ -5,13 +5,14 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 // Layer Definitions
-#define DEFAULT 0
-#define NAV 1
-#define MOUSE 2
-#define MEDIA 3
-#define NUM 4
-#define SYM 5
-#define FN 6
+#define QWERTY 0
+#define COLEMAK 1
+#define NAV 2
+#define MOUSE 3
+#define MEDIA 4
+#define NUM 5
+#define SYM 6
+#define FN 7
 
 // TODO
 // Change right index LSFT on numbers layer to shift to alternative shift layer, 
@@ -30,45 +31,38 @@
     flavor = "tap-preferred";
 };
 
+// Keymap configuration
 / {
-
-//  Experimental custom behaviors (homerow mods, layer tap)
-//     behaviors {
-//         hm: homerow_mods {
-//             compatible = "zmk,behavior-hold-tap";
-//             label = "HOMEROW_MODS";
-//             #binding-cells = <2>;
-//             tapping_term_ms = <150>;
-//             quick_tap_ms = <0>;
-//             flavor = "tap-preferred";
-//             BINDINGS = <&kp>, <&kp>;
-//         };
-//         lht: layer_hold_tap {
-//             compatible = "zmk,behavior-hold-tap";
-//             label = "LAYER_HOLD_TAP";
-//             #binding-cells = <2>;
-//             tapping_term_ms = <150>;
-//             quick_tap_ms = <0>;
-//             flavor = "tap-preferred";
-//             bindings = <&mo>, <&kp>;
-//         };
-//     };
-
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        qwerty {
+// ---------------------------------------------------------------------------------------------------------
+// |     |   Q    |   W    |     E     |     R     |     T     | # |     Y     |     U     |    I    |    O   |   P    |     |
+// |     | A/LGUI | S/LALT |  D/LCTRL  |  F/LSHFT  |     G     | # |     H     |  J/LSHFT  | K/LCTRL | L/LALT | ;/LGUI |     |
+// |     |   Z    | X/RALT |     C     |     V     |     B     | # |     N     |     M     |    ,    | ./RALT |   /    |     |
+//                         | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM | DEL/FN  |
+
+            bindings = <
+&trans  &kp Q       &kp W       &kp E          &kp R          &kp T                &kp Y          &kp U         &kp I        &kp O         &kp P          &trans
+&trans  &mt LGUI A  &mt LALT S  &mt LCTRL D    &mt LSHFT F    &kp G                &kp H          &mt LSHFT J   &mt LCTRL K  &mt LALT L    &mt LGUI SEMI  &trans
+&trans  &kp Z       &mt RALT X  &kp C          &kp V          &kp B                &kp N          &kp M         &kp CMMA     &mt RALT DOT  &kp FSLH       &trans
+                                &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
+            >;
+        };
+
+        colemak {
 // ---------------------------------------------------------------------------------------------------------
 // |     |   Q    |   W    |     F     |     P     |     B     | # |     J     |     L     |    U    |    Y   |   '    |     |
 // |     | A/LGUI | R/LALT |  S/LCTRL  |  T/LSHFT  |     G     | # |     M     |  N/LSHFT  | E/LCTRL | I/LALT | O/LGUI |     |
 // |     |   Z    | X/RALT |     C     |     D     |     V     | # |     K     |     H     |    ,    | ./RALT |   /    |     |
-//                            | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM | DEL/FN  |
+//                         | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM  | DEL/FN  |
 
             bindings = <
 &trans  &kp Q       &kp W       &kp F          &kp P          &kp B                &kp J          &kp L         &kp U        &kp Y         &kp SQT     &trans
 &trans  &mt LGUI A  &mt LALT R  &mt LCTRL S    &mt LSHFT T    &kp G                &kp M          &mt LSHFT N   &mt LCTRL E  &mt LALT I    &mt LGUI O  &trans
 &trans  &kp Z       &mt RALT X  &kp C          &kp D          &kp V                &kp K          &kp H         &kp CMMA     &mt RALT DOT  &kp FSLH    &trans
-                                    &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
+                                &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
             >;
         };
 
@@ -109,14 +103,14 @@
 // -------------------------------------------------------------------------------------
 // |     |      |      |       |       |      | # | BOOTLOAD | EP_OFF | BR_D   | BR_U   | EP_ON  |     |
 // |     | LGUI | LALT | LCTRL | LSHFT |      | # | RESET    | PREV   | VOL_D  | VOL_U  | NEXT   |     |
-// |     |      | RALT |       |       |      | # |          | BT_0   | BT_PRV | BT_NXT | BT_CLR |     |
+// |     |      | RALT |       |       |      | # | COLEMAK  | BT_CLR | BT_PRV | BT_NXT | BT_0   |     |
 //                     | HELD  |       |      | # | STOP     | PLAY   | MUTE   |
 
             bindings = <
-&trans  &trans    &trans    &trans     &trans     &trans        &bootloader  &ext_power EP_OFF  &cp C_BRI_DN  &cp C_BRI_UP  &ext_power EP_ON  &trans     
-&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans        &reset       &cp C_PREV         &cp C_VOL_DN  &cp C_VOL_UP  &cp C_NEXT        &trans
-&trans  &trans    &kp RALT  &trans     &trans     &trans        &trans       &bt BT_SEL 0       &bt BT_PRV    &bt BT_NXT    &bt BT_CLR         &trans
-                            &trans     &trans     &trans        &cp C_STOP   &cp C_PLAY         &cp C_MUTE
+&trans  &trans    &trans    &trans     &trans     &trans        &bootloader   &ext_power EP_OFF  &cp C_BRI_DN  &cp C_BRI_UP  &ext_power EP_ON  &trans     
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans        &reset        &cp C_PREV         &cp C_VOL_DN  &cp C_VOL_UP  &cp C_NEXT        &trans
+&trans  &trans    &kp RALT  &trans     &trans     &trans        &tog COLEMAK  &bt BT_CLR         &bt BT_PRV    &bt BT_NXT    &bt BT_SEL 0      &trans
+                            &trans     &trans     &trans        &cp C_STOP    &cp C_PLAY         &cp C_MUTE
             >;
         };
 

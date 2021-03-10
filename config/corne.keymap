@@ -7,12 +7,13 @@
 // Layer Definitions
 #define QWERTY 0
 #define COLEMAK 1
-#define NAV 2
-#define MOUSE 3
-#define MEDIA 4
-#define NUM 5
-#define SYM 6
-#define FN 7
+#define GAMING 2
+#define NAV 3
+#define MOUSE 4
+#define MEDIA 5
+#define NUM 6
+#define SYM 7
+#define FN 8
 
 // TODO
 // Change right index LSFT on numbers layer to shift to alternative shift layer, 
@@ -38,15 +39,15 @@
 
         qwerty {
 // ---------------------------------------------------------------------------------------------------------
-// |     |   Q    |   W    |     E     |     R     |     T     | # |     Y     |     U     |    I    |    O   |   P    |     |
-// |     | A/LGUI | S/LALT |  D/LCTRL  |  F/LSHFT  |     G     | # |     H     |  J/LSHFT  | K/LCTRL | L/LALT | ;/LGUI |     |
-// |     |   Z    | X/RALT |     C     |     V     |     B     | # |     N     |     M     |    ,    | ./RALT |   /    |     |
-//                         | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM | DEL/FN  |
+// |     |   Q    |   W    |     E     |     R     |     T     | # |     Y     |     U     |    I    |    O   |   P    | COLEMAK |
+// |     | A/LGUI | S/LALT |  D/LCTRL  |  F/LSHFT  |     G     | # |     H     |  J/LSHFT  | K/LCTRL | L/LALT | ;/LGUI |         |
+// |     |   Z    | X/RALT |     C     |     V     |     B     | # |     N     |     M     |    ,    | ./RALT |   /    | GAMING  |
+//                         | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM  | DEL/FN  |
 
             bindings = <
-&trans  &kp Q       &kp W       &kp E          &kp R          &kp T                &kp Y          &kp U         &kp I        &kp O         &kp P          &trans
+&trans  &kp Q       &kp W       &kp E          &kp R          &kp T                &kp Y          &kp U         &kp I        &kp O         &kp P          &tog COLEMAK
 &trans  &mt LGUI A  &mt LALT S  &mt LCTRL D    &mt LSHFT F    &kp G                &kp H          &mt LSHFT J   &mt LCTRL K  &mt LALT L    &mt LGUI SEMI  &trans
-&trans  &kp Z       &mt RALT X  &kp C          &kp V          &kp B                &kp N          &kp M         &kp CMMA     &mt RALT DOT  &kp FSLH       &trans
+&trans  &kp Z       &mt RALT X  &kp C          &kp V          &kp B                &kp N          &kp M         &kp CMMA     &mt RALT DOT  &kp FSLH       &tog GAMING
                                 &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
             >;
         };
@@ -63,6 +64,21 @@
 &trans  &mt LGUI A  &mt LALT R  &mt LCTRL S    &mt LSHFT T    &kp G                &kp M          &mt LSHFT N   &mt LCTRL E  &mt LALT I    &mt LGUI O  &trans
 &trans  &kp Z       &mt RALT X  &kp C          &kp D          &kp V                &kp K          &kp H         &kp CMMA     &mt RALT DOT  &kp FSLH    &trans
                                 &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
+            >;
+        };
+
+        gaming {
+// ---------------------------------------------------------------------------------------------------------
+// |     |   Q   |   W   |   E   |   R   |   T   | # |   Y   |   U   |   I   |   O   |   P   |     |
+// |     |   A   |   S   |   D   |   F   |   G   | # |   H   |   J   |   K   |   L   |   ;   |     |
+// |     |   Z   |   X   |   C   |   V   |   B   | # |   N   |   M   |   ,   |   .   |   /   |     |
+//                       |  ESC  | SPACE |  TAB  | # | ENTER | BSPC  |  DEL  |
+
+            bindings = <
+&trans  &kp Q  &kp W  &kp E    &kp R      &kp T          &kp Y      &kp U     &kp I     &kp O    &kp P     &trans
+&trans  &kp A  &kp S  &kp D    &kp F      &kp G          &kp H      &kp J     &kp K     &kp L    &kp SEMI  &trans
+&trans  &kp Z  &kp X  &kp C    &kp V      &kp B          &kp N      &kp M     &kp CMMA  &kp DOT  &kp FSLH  &trans
+                      &kp ESC  &kp SPACE  &kp TAB        &kp ENTER  &kp BSPC  &kp DEL
             >;
         };
 
@@ -103,13 +119,13 @@
 // -------------------------------------------------------------------------------------
 // |     |      |      |       |       |      | # | BOOTLOAD | EP_OFF | BR_D   | BR_U   | EP_ON  |     |
 // |     | LGUI | LALT | LCTRL | LSHFT |      | # | RESET    | PREV   | VOL_D  | VOL_U  | NEXT   |     |
-// |     |      | RALT |       |       |      | # | COLEMAK  | BT_CLR | BT_PRV | BT_NXT | BT_0   |     |
+// |     |      | RALT |       |       |      | # |          | BT_CLR | BT_PRV | BT_NXT | BT_0   |     |
 //                     | HELD  |       |      | # | STOP     | PLAY   | MUTE   |
 
             bindings = <
 &trans  &trans    &trans    &trans     &trans     &trans        &bootloader   &ext_power EP_OFF  &cp C_BRI_DN  &cp C_BRI_UP  &ext_power EP_ON  &trans     
 &trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans        &reset        &cp C_PREV         &cp C_VOL_DN  &cp C_VOL_UP  &cp C_NEXT        &trans
-&trans  &trans    &kp RALT  &trans     &trans     &trans        &tog COLEMAK  &bt BT_CLR         &bt BT_PRV    &bt BT_NXT    &bt BT_SEL 0      &trans
+&trans  &trans    &kp RALT  &trans     &trans     &trans        &trans        &bt BT_CLR         &bt BT_PRV    &bt BT_NXT    &bt BT_SEL 0      &trans
                             &trans     &trans     &trans        &cp C_STOP    &cp C_PLAY         &cp C_MUTE
             >;
         };
@@ -123,7 +139,7 @@
 
             bindings = <
 &trans  &kp LBKT   &kp N7  &kp N8   &kp N9  &kp RBKT         &trans  &trans     &trans     &trans    &trans    &trans    
-&trans  &kp SEMI   &kp N4  &kp N5   &kp N6  &kp EQUAL        &trans  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &trans
+&trans  &kp SQT    &kp N4  &kp N5   &kp N6  &kp EQUAL        &trans  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &trans
 &trans  &kp GRAVE  &kp N1  &kp N2   &kp N3  &kp BSLH         &trans  &trans     &trans     &kp RALT  &trans    &trans    
                            &kp DOT  &kp N0  &kp MINUS        &trans  &trans     &trans
             >;
@@ -138,7 +154,7 @@
 
             bindings = <
 &trans  &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR   &kp RBRC              &trans  &trans     &trans     &trans    &trans    &trans    
-&trans  &kp SEMI   &kp DLLR  &kp PRCNT  &kp CARET  &kp PLUS              &trans  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &trans
+&trans  &kp DQT    &kp DLLR  &kp PRCNT  &kp CARET  &kp PLUS              &trans  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &trans
 &trans  &kp TILDE  &kp EXCL  &kp AT     &kp HASH   &kp PIPE              &trans  &trans     &trans     &kp RALT  &trans    &trans    
                              &kp LPAR   &kp RPAR   &kp UNDERSCORE        &trans  &trans     &trans
             >;

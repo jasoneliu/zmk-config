@@ -31,6 +31,9 @@
     quick_tap_ms = <0>;
     flavor = "tap-preferred";
 };
+&sk {
+    release-after-ms = <1000>;
+};
 
 // Keymap configuration
 / {
@@ -39,31 +42,31 @@
 
         qwerty {
 // ---------------------------------------------------------------------------------------------------------
-// |     |   Q    |   W    |     E     |     R     |     T     | # |     Y     |     U     |    I    |    O   |   P    | COLEMAK |
-// |     | A/LGUI | S/LALT |  D/LCTRL  |  F/LSHFT  |     G     | # |     H     |  J/LSHFT  | K/LCTRL | L/LALT | ;/LGUI |         |
-// |     |   Z    | X/RALT |     C     |     V     |     B     | # |     N     |     M     |    ,    | ./RALT |   /    | GAMING  |
-//                         | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM  | DEL/FN  |
+// |       |   Q    |   W    |     E     |     R     |     T     | # |     Y     |     U     |    I    |    O   |   P    | COLEMAK |
+// | LSHFT | A/LGUI | S/LALT |  D/LCTRL  |  F/LSHFT  |     G     | # |     H     |  J/LSHFT  | K/LCTRL | L/LALT | ;/LGUI | LSHFT   |
+// |       |   Z    | X/RALT |     C     |     V     |     B     | # |     N     |     M     |    ,    | ./RALT |   /    | GAMING  |
+//                           | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM  | DEL/FN  |
 
             bindings = <
-&trans  &kp Q       &kp W       &kp E          &kp R          &kp T                &kp Y          &kp U         &kp I        &kp O         &kp P          &tog COLEMAK
-&trans  &mt LGUI A  &mt LALT S  &mt LCTRL D    &mt LSHFT F    &kp G                &kp H          &mt LSHFT J   &mt LCTRL K  &mt LALT L    &mt LGUI SEMI  &trans
-&trans  &kp Z       &mt RALT X  &kp C          &kp V          &kp B                &kp N          &kp M         &kp CMMA     &mt RALT DOT  &kp FSLH       &tog GAMING
-                                &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
+&trans     &kp Q       &kp W       &kp E          &kp R          &kp T                &kp Y          &kp U         &kp I        &kp O         &kp P          &tog COLEMAK
+&sk LSHFT  &mt LGUI A  &mt LALT S  &mt LCTRL D    &mt LSHFT F    &kp G                &kp H          &mt LSHFT J   &mt LCTRL K  &mt LALT L    &mt LGUI SEMI  &sk LSHFT
+&trans     &kp Z       &mt RALT X  &kp C          &kp V          &kp B                &kp N          &kp M         &kp CMMA     &mt RALT DOT  &kp FSLH       &tog GAMING
+                                   &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
             >;
         };
 
         colemak {
 // ---------------------------------------------------------------------------------------------------------
-// |     |   Q    |   W    |     F     |     P     |     B     | # |     J     |     L     |    U    |    Y   |   '    |     |
-// |     | A/LGUI | R/LALT |  S/LCTRL  |  T/LSHFT  |     G     | # |     M     |  N/LSHFT  | E/LCTRL | I/LALT | O/LGUI |     |
-// |     |   Z    | X/RALT |     C     |     D     |     V     | # |     K     |     H     |    ,    | ./RALT |   /    |     |
-//                         | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM  | DEL/FN  |
+// |       |   Q    |   W    |     F     |     P     |     B     | # |     J     |     L     |    U    |    Y   |   '    |       |
+// | LSHFT | A/LGUI | R/LALT |  S/LCTRL  |  T/LSHFT  |     G     | # |     M     |  N/LSHFT  | E/LCTRL | I/LALT | O/LGUI | LSHFT |
+// |       |   Z    | X/RALT |     C     |     D     |     V     | # |     K     |     H     |    ,    | ./RALT |   /    |       |
+//                           | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM  | DEL/FN  |
 
             bindings = <
-&trans  &kp Q       &kp W       &kp F          &kp P          &kp B                &kp J          &kp L         &kp U        &kp Y         &kp SQT     &trans
-&trans  &mt LGUI A  &mt LALT R  &mt LCTRL S    &mt LSHFT T    &kp G                &kp M          &mt LSHFT N   &mt LCTRL E  &mt LALT I    &mt LGUI O  &trans
-&trans  &kp Z       &mt RALT X  &kp C          &kp D          &kp V                &kp K          &kp H         &kp CMMA     &mt RALT DOT  &kp FSLH    &trans
-                                &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
+&trans     &kp Q       &kp W       &kp F          &kp P          &kp B                &kp J          &kp L         &kp U        &kp Y         &kp SQT     &trans
+&sk LSHFT  &mt LGUI A  &mt LALT R  &mt LCTRL S    &mt LSHFT T    &kp G                &kp M          &mt LSHFT N   &mt LCTRL E  &mt LALT I    &mt LGUI O  &sk LSHFT
+&trans     &kp Z       &mt RALT X  &kp C          &kp D          &kp V                &kp K          &kp H         &kp CMMA     &mt RALT DOT  &kp FSLH    &trans
+                                   &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
             >;
         };
 
@@ -90,10 +93,10 @@
 //                     |       | HELD  |     | # | ENTER | BSPC | DEL  |
 
             bindings = <
-&trans  &trans    &trans    &trans     &trans     &trans        &kp K_REDO  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp K_UNDO  &trans        
-&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans        &kp CAPS    &kp LEFT   &kp DOWN    &kp UP       &kp RIGHT   &trans
-&trans  &trans    &kp RALT  &trans     &trans     &trans        &kp INS     &kp HOME   &kp PG_DN   &kp PG_UP    &kp END     &trans
-                            &trans     &trans     &trans        &kp ENTER   &kp BSPC   &kp DEL
+&trans  &trans    &trans    &trans     &trans     &trans        &kp K_REDO    &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp K_UNDO  &trans        
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans        &kp CAPSLOCK  &kp LEFT   &kp DOWN    &kp UP       &kp RIGHT   &trans
+&trans  &trans    &kp RALT  &trans     &trans     &trans        &kp INS       &kp HOME   &kp PG_DN   &kp PG_UP    &kp END     &trans
+                            &trans     &trans     &trans        &kp ENTER     &kp BSPC   &kp DEL
             >;  
         };
 

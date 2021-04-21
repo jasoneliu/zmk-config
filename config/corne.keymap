@@ -29,6 +29,7 @@
 };
 &sk {
     release-after-ms = <500>;
+    quick-release;
 };
 
 // Keymap configuration (Colemak-Dhm)

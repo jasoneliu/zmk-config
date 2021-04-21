@@ -1,4 +1,4 @@
-# My ZMK Corne Keymap  
+# ZMK Corne Keymap  
 
 Keymap for [Corne v3 by Foostan](https://github.com/foostan/crkbd).  
 Created with [ZMK](https://zmkfirmware.dev/).  
@@ -11,6 +11,6 @@ Inspired by the [Miryoku layout by Manna Harbour](https://github.com/manna-harbo
 - Numpad
 - Navigation keys
 - Media keys
-- Multiple keyboard layouts (Colemak-DHm, Qwerty, Gaming)
+- Gaming layer
 - Bluetooth
 - OLED displays

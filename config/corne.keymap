@@ -37,45 +37,45 @@
     behaviors {
         slt: sticky_layer_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "sticky-layer-tap";
+            label = "STICKY_LAYER_TAP";
             #binding-cells = <2>;
             tapping_term_ms = <200>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&sk>;
         };
-    }
+    };
 
     keymap {
         compatible = "zmk,keymap";
 
-        colemak { // OS using Colemak-DHm
+        colemak {
 // ---------------------------------------------------------------------------------------------------------
-// |     |   Q    |   W    |     F     |     P     |     B     | # |     J     |     L     |    U    |    Y   |   '    | QWERTY         |
-// |     | A/LGUI | R/LALT |  S/LCTRL  |  T/LSHFT  |     G     | # |     M     |  N/LSHFT  | E/LCTRL | I/LALT | O/LGUI | GAMING_COLEMAK |
-// |     |   Z    | X/RALT |     C     |     D     |     V     | # |     K     |     H     |    ,    | ./RALT |   /    | GAMING_QWERTY  |
-//                         | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM  | DEL/FN  |
+// |     |   Q    |   W    |     F     |     P     |     B     | # |     J     |    L     |    U     |    Y   |   '    | QWERTY         |
+// |     | A/LGUI | R/LALT |  S/LCTRL  |  T/LSHFT  |     G     | # |     M     | N/LSHFT  | E/LCTRL  | I/LALT | O/LGUI | GAMING_COLEMAK |
+// |     |   Z    | X/RALT |     C     |     D     |     V     | # |     K     |    H     |    ,     | ./RALT |   /    | GAMING_QWERTY  |
+//                         | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM | LSHFT/FN |
 
             bindings = <
-&trans  &kp Q       &kp W       &kp E          &kp R          &kp T                &kp Y          &kp U         &kp I        &kp O         &kp P          &tog QWERTY
-&trans  &mt LGUI A  &mt LALT S  &mt LCTRL D    &mt LSHFT F    &kp G                &kp H          &mt LSHFT J   &mt LCTRL K  &mt LALT L    &mt LGUI SEMI  &tog GAMING_COLEMAK
-&trans  &kp Z       &mt RALT X  &kp C          &kp V          &kp B                &kp N          &kp M         &kp CMMA     &mt RALT DOT  &kp FSLH       &tog GAMING_QWERTY
-                                &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &slt FN DEL
+&trans  &kp Q       &kp W       &kp E          &kp R          &kp T                &kp Y          &kp U         &kp I          &kp O         &kp P          &tog QWERTY
+&trans  &mt LGUI A  &mt LALT S  &mt LCTRL D    &mt LSHFT F    &kp G                &kp H          &mt LSHFT J   &mt LCTRL K    &mt LALT L    &mt LGUI SEMI  &tog GAMING_COLEMAK
+&trans  &kp Z       &mt RALT X  &kp C          &kp V          &kp B                &kp N          &kp M         &kp CMMA       &mt RALT DOT  &kp FSLH       &tog GAMING_QWERTY
+                                &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &slt FN LSHFT
             >;
         };
 
-        qwerty { // OS using Qwerty
+        qwerty {
 // ---------------------------------------------------------------------------------------------------------
-// |     |   Q    |   W    |     E     |     R     |     T     | # |     Y     |     U     |    I    |    O   |   P    |     |
-// |     | A/LGUI | S/LALT |  D/LCTRL  |  F/LSHFT  |     G     | # |     H     |  J/LSHFT  | K/LCTRL | L/LALT | ;/LGUI |     |
-// |     |   Z    | X/RALT |     C     |     V     |     B     | # |     N     |     M     |    ,    | ./RALT |   /    |     |
-//                         | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM  | DEL/FN  |
+// |     |   Q    |   W    |     E     |     R     |     T     | # |     Y     |     U    |    I     |    O   |   P    |     |
+// |     | A/LGUI | S/LALT |  D/LCTRL  |  F/LSHFT  |     G     | # |     H     | J/LSHFT  | K/LCTRL  | L/LALT | ;/LGUI |     |
+// |     |   Z    | X/RALT |     C     |     V     |     B     | # |     N     |     M    |    ,     | ./RALT |   /    |     |
+//                         | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM | LSHFT/FN |
 
             bindings = <
-&trans  &kp Q       &kp W       &kp F          &kp P          &kp B                &kp J          &kp L         &kp U        &kp Y         &kp SQT     &trans
-&trans  &mt LGUI A  &mt LALT R  &mt LCTRL S    &mt LSHFT T    &kp G                &kp M          &mt LSHFT N   &mt LCTRL E  &mt LALT I    &mt LGUI O  &trans
-&trans  &kp Z       &mt RALT X  &kp C          &kp D          &kp V                &kp K          &kp H         &kp CMMA     &mt RALT DOT  &kp FSLH    &trans
-                                &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &slt FN DEL
+&trans  &kp Q       &kp W       &kp F          &kp P          &kp B                &kp J          &kp L         &kp U          &kp Y         &kp SQT     &trans
+&trans  &mt LGUI A  &mt LALT R  &mt LCTRL S    &mt LSHFT T    &kp G                &kp M          &mt LSHFT N   &mt LCTRL E    &mt LALT I    &mt LGUI O  &trans
+&trans  &kp Z       &mt RALT X  &kp C          &kp D          &kp V                &kp K          &kp H         &kp CMMA       &mt RALT DOT  &kp FSLH    &trans
+                                &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &slt FN LSHFT
             >;
         };
 

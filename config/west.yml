@@ -2,10 +2,14 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: okke-formsma
+      url-base: https://github.com/okke-formsma
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      # remote: zmkfirmware
+      # revision: main
+      remote: okke-formsma
+      revision: sticky-key-696
       import: app/west.yml
   self:
     path: config

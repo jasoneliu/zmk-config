@@ -2,14 +2,14 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: okke-formsma
-      url-base: https://github.com/okke-formsma
+    - name: petejohanson
+      url-base: https://github.com/petejohanson
   projects:
     - name: zmk
       # remote: zmkfirmware
       # revision: main
-      remote: okke-formsma
-      revision: sticky-key-696
+      remote: petejohanson
+      revision: core/peripheral-behavior-invocation
       import: app/west.yml
   self:
     path: config

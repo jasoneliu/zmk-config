@@ -6,11 +6,11 @@ Inspired by the [Miryoku layout by Manna Harbour](https://github.com/manna-harbo
 
 ## Features
 - Split, column-staggered, 5x3+3 layout
-- Homerow modifiers
-- Sticky shift
+- Homerow modifiers (shift, control, alt, super)
 - Numpad
 - Navigation keys
 - Media keys
-- Gaming layer
+- Layout switch (Colemak DHm and QWERTY)
+- Gaming layer (disabled homerow modifiers)
 - Bluetooth
 - OLED displays

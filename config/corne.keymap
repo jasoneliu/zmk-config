@@ -5,11 +5,11 @@
 #include <dt-bindings/zmk/outputs.h>
 
 // Layer Definitions
-#define LAYERS 0
-#define COLEMAK 1
-#define QWERTY 2
-#define GAMING_COLEMAK 3
-#define GAMING_QWERTY 4
+#define COLEMAK 0
+#define QWERTY 1
+#define GAMING_COLEMAK 2
+#define GAMING_QWERTY 3
+#define LAYERS 4
 #define NAV 5
 #define MOUSE 6
 #define MEDIA 7
@@ -37,21 +37,6 @@
 / {
     keymap {
         compatible = "zmk,keymap";
-
-        layers {
-// --------------------------------------------------------------------------------------------
-// | HELD    |     |     |     |     |     | # |     |     |     |     |     |                |
-// | COLEMAK |     |     |     |     |     | # |     |     |     |     |     | GAMING_COLEMAK |
-// | QWERTY  |     |     |     |     |     | # |     |     |     |     |     | GAMING_QWERTY  |
-//                       |     |     |     | # |     |     |     |
-
-            bindings = <
-&trans       &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
-&to COLEMAK  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &to GAMING_COLEMAK
-&to QWERTY   &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &to GAMING_QWERTY
-                             &trans  &trans  &trans        &trans  &trans  &trans
-            >;
-        };
 
         colemak {
 // -----------------------------------------------------------------------------------------------------------------------------
@@ -84,7 +69,7 @@
         };
 
         gaming_colemak {
-// -------------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------
 // | LAYERS |   Q   |   W   |   F   |   P   |   B   | # |   J   |   L   |   U   |   Y   |   '   |     |
 // |        |   A   |   R   |   S   |   T   |   G   | # |   M   |   N   |   E   |   I   |   O   |     |
 // |        |   Z   |   X   |   C   |   D   |   V   | # |   K   |   H   |   ,   |   .   |   /   |     |
@@ -99,11 +84,11 @@
         };
 
         gaming_qwerty {
-// -------------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------
 // | LAYERS |   Q   |   W   |   E   |   R   |   T   | # |   Y   |   U   |   I   |   O   |   P   |     |
 // |        |   A   |   S   |   D   |   F   |   G   | # |   H   |   J   |   K   |   L   |   ;   |     |
 // |        |   Z   |   X   |   C   |   V   |   B   | # |   N   |   M   |   ,   |   .   |   /   |     |
-//                       |  ESC  | SPACE |  TAB  | # | ENTER | BSPC  |  DEL  |
+//                          |  ESC  | SPACE |  TAB  | # | ENTER | BSPC  |  DEL  |
 
             bindings = <
 &mo LAYERS  &kp Q  &kp W  &kp K    &kp S      &kp F          &kp O      &kp I     &kp L     &kp SEMI  &kp R     &trans
@@ -112,6 +97,22 @@
                       &kp ESC  &kp SPACE  &kp TAB        &kp ENTER  &kp BSPC  &kp DEL
             >;
         };
+
+        layers {
+// ---------------------------------------------------------------------------------------------
+// | HELD |     |     |     |     |     | # |     |     |         |                |     |     |
+// |      |     |     |     |     |     | # |     |     | COLEMAK | GAMING_COLEMAK |     |     |
+// |      |     |     |     |     |     | # |     |     | QWERTY  | GAMING_QWERTY  |     |     |
+//                    |     |     |     | # |     |     |         |
+
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans       &trans              &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &to COLEMAK  &to GAMING_COLEMAK  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &to QWERTY   &to GAMING_QWERTY   &trans  &trans
+                        &trans  &trans  &trans        &trans  &trans  &trans
+            >;
+        };
+
 
         navigation {
 // -------------------------------------------------------------------------------------------

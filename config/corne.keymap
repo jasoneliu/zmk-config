@@ -40,14 +40,14 @@
 
         colemak {
 // -----------------------------------------------------------------------------------------------------------------------------
-// | LAYERS |   Q    |   W    |     F     |     P     |     B     | # |     J     |    L     |    U    |    Y   |   '    |     |
-// |        | A/LGUI | R/LALT |  S/LCTRL  |  T/LSHFT  |     G     | # |     M     | N/LSHFT  | E/LCTRL | I/LALT | O/LGUI |     |
+// |        |   Q    |   W    |     F     |     P     |     B     | # |     J     |    L     |    U    |    Y   |   '    |     |
+// | LAYERS | A/LGUI | R/LALT |  S/LCTRL  |  T/LSHFT  |     G     | # |     M     | N/LSHFT  | E/LCTRL | I/LALT | O/LGUI |     |
 // |        |   Z    | X/RALT |     C     |     D     |     V     | # |     K     |    H     |    ,    | ./RALT |   /    |     |
 //                            | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM | DEL/FN  |
 
             bindings = <
-&mo LAYERS  &kp Q       &kp W       &kp E          &kp R          &kp T                &kp Y          &kp U         &kp I          &kp O         &kp P          &trans
-&trans      &mt LGUI A  &mt LALT S  &mt LCTRL D    &mt LSHFT F    &kp G                &kp H          &mt LSHFT J   &mt LCTRL K    &mt LALT L    &mt LGUI SEMI  &trans
+&trans      &kp Q       &kp W       &kp E          &kp R          &kp T                &kp Y          &kp U         &kp I          &kp O         &kp P          &trans
+&mo LAYERS  &mt LGUI A  &mt LALT S  &mt LCTRL D    &mt LSHFT F    &kp G                &kp H          &mt LSHFT J   &mt LCTRL K    &mt LALT L    &mt LGUI SEMI  &trans
 &trans      &kp Z       &mt RALT X  &kp C          &kp V          &kp B                &kp N          &kp M         &kp CMMA       &mt RALT DOT  &kp FSLH       &trans
                                     &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
             >;
@@ -55,14 +55,14 @@
 
         qwerty {
 // -----------------------------------------------------------------------------------------------------------------------------
-// | LAYERS |   Q    |   W    |     E     |     R     |     T     | # |     Y     |     U    |    I    |    O   |   P    |     |
-// |        | A/LGUI | S/LALT |  D/LCTRL  |  F/LSHFT  |     G     | # |     H     | J/LSHFT  | K/LCTRR | L/LALT | ;/LGUI |     |
+// |        |   Q    |   W    |     E     |     R     |     T     | # |     Y     |     U    |    I    |    O   |   P    |     |
+// | LAYERS | A/LGUI | S/LALT |  D/LCTRL  |  F/LSHFT  |     G     | # |     H     | J/LSHFT  | K/LCTRR | L/LALT | ;/LGUI |     |
 // |        |   Z    | X/RALT |     C     |     V     |     B     | # |     N     |     M    |    ,    | ./RALT |   /    |     |
 //                            | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM | DEL/FN  |
 
             bindings = <
-&mo LAYERS  &kp Q       &kp W       &kp F          &kp P          &kp B                &kp J          &kp L         &kp U          &kp Y         &kp SQT     &trans
-&trans      &mt LGUI A  &mt LALT R  &mt LCTRL S    &mt LSHFT T    &kp G                &kp M          &mt LSHFT N   &mt LCTRL E    &mt LALT I    &mt LGUI O  &trans
+&trans      &kp Q       &kp W       &kp F          &kp P          &kp B                &kp J          &kp L         &kp U          &kp Y         &kp SQT     &trans
+&mo LAYERS  &mt LGUI A  &mt LALT R  &mt LCTRL S    &mt LSHFT T    &kp G                &kp M          &mt LSHFT N   &mt LCTRL E    &mt LALT I    &mt LGUI O  &trans
 &trans      &kp Z       &mt RALT X  &kp C          &kp D          &kp V                &kp K          &kp H         &kp CMMA       &mt RALT DOT  &kp FSLH    &trans
                                     &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
             >;
@@ -70,14 +70,14 @@
 
         gaming_colemak {
 // ----------------------------------------------------------------------------------------------------
-// | LAYERS |   Q   |   W   |   F   |   P   |   B   | # |   J   |   L   |   U   |   Y   |   '   |     |
-// |        |   A   |   R   |   S   |   T   |   G   | # |   M   |   N   |   E   |   I   |   O   |     |
+// |        |   Q   |   W   |   F   |   P   |   B   | # |   J   |   L   |   U   |   Y   |   '   |     |
+// | LAYERS |   A   |   R   |   S   |   T   |   G   | # |   M   |   N   |   E   |   I   |   O   |     |
 // |        |   Z   |   X   |   C   |   D   |   V   | # |   K   |   H   |   ,   |   .   |   /   |     |
 //                          |  ESC  | SPACE |  TAB  | # | ENTER | BSPC  |  DEL  |
 
             bindings = <
-&mo LAYERS  &kp Q  &kp W  &kp E    &kp R      &kp T          &kp Y      &kp U     &kp I     &kp O    &kp P     &trans
-&trans      &kp A  &kp S  &kp D    &kp F      &kp G          &kp H      &kp J     &kp K     &kp L    &kp SEMI  &trans
+&trans      &kp Q  &kp W  &kp E    &kp R      &kp T          &kp Y      &kp U     &kp I     &kp O    &kp P     &trans
+&mo LAYERS  &kp A  &kp S  &kp D    &kp F      &kp G          &kp H      &kp J     &kp K     &kp L    &kp SEMI  &trans
 &trans      &kp Z  &kp X  &kp C    &kp V      &kp B          &kp N      &kp M     &kp CMMA  &kp DOT  &kp FSLH  &trans
                           &kp ESC  &kp SPACE  &kp TAB        &kp ENTER  &kp BSPC  &kp DEL
             >;
@@ -85,14 +85,14 @@
 
         gaming_qwerty {
 // ----------------------------------------------------------------------------------------------------
-// | LAYERS |   Q   |   W   |   E   |   R   |   T   | # |   Y   |   U   |   I   |   O   |   P   |     |
-// |        |   A   |   S   |   D   |   F   |   G   | # |   H   |   J   |   K   |   L   |   ;   |     |
+// |        |   Q   |   W   |   E   |   R   |   T   | # |   Y   |   U   |   I   |   O   |   P   |     |
+// | LAYERS |   A   |   S   |   D   |   F   |   G   | # |   H   |   J   |   K   |   L   |   ;   |     |
 // |        |   Z   |   X   |   C   |   V   |   B   | # |   N   |   M   |   ,   |   .   |   /   |     |
 //                          |  ESC  | SPACE |  TAB  | # | ENTER | BSPC  |  DEL  |
 
             bindings = <
-&mo LAYERS  &kp Q  &kp W  &kp K    &kp S      &kp F          &kp O      &kp I     &kp L     &kp SEMI  &kp R     &trans
-&trans      &kp A  &kp D  &kp V    &kp E      &kp G          &kp M      &kp Y     &kp N     &kp U     &kp SQT   &trans
+&trans      &kp Q  &kp W  &kp K    &kp S      &kp F          &kp O      &kp I     &kp L     &kp SEMI  &kp R     &trans
+&mo LAYERS  &kp A  &kp D  &kp V    &kp E      &kp G          &kp M      &kp Y     &kp N     &kp U     &kp SQT   &trans
 &trans      &kp Z  &kp X  &kp C    &kp B      &kp T          &kp J      &kp H     &kp CMMA  &kp DOT   &kp FSLH  &trans
                       &kp ESC  &kp SPACE  &kp TAB        &kp ENTER  &kp BSPC  &kp DEL
             >;
@@ -100,8 +100,8 @@
 
         layers {
 // ---------------------------------------------------------------------------------------------
-// | HELD |     |     |     |     |     | # |     |     |         |                |     |     |
-// |      |     |     |     |     |     | # |     |     | COLEMAK | GAMING_COLEMAK |     |     |
+// |      |     |     |     |     |     | # |     |     |         |                |     |     |
+// | HELD |     |     |     |     |     | # |     |     | COLEMAK | GAMING_COLEMAK |     |     |
 // |      |     |     |     |     |     | # |     |     | QWERTY  | GAMING_QWERTY  |     |     |
 //                    |     |     |     | # |     |     |         |
 
@@ -126,7 +126,7 @@
 &trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans        &kp CAPSLOCK  &kp LEFT   &kp DOWN    &kp UP       &kp RIGHT   &trans
 &trans  &trans    &kp RALT  &trans     &trans     &trans        &kp INS       &kp HOME   &kp PG_DN   &kp PG_UP    &kp END     &trans
                             &trans     &trans     &trans        &kp ENTER     &kp BSPC   &kp DEL
-            >;  
+            >;
         };
 
 // TODO
